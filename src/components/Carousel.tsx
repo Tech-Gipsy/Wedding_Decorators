@@ -43,4 +43,5 @@ const Carousel: React.FC = () => {
     );
 };
 
+
 export default Carousel;
