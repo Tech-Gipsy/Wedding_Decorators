@@ -19,19 +19,26 @@ const NavBar: React.FC = () => {
     };
 
     return (
-        <nav className="navbar container">
+        <nav className="navbar">
             <div className="navbar-left">
-                <img src="/assets/images/logo.png" alt="Company Logo" className="navbar-logo" />
-                <span className="company-name">Wedding Planner Co.</span>
+                <img src="/assets/logo.png" alt="Company Logo" className="navbar-logo" />
             </div>
             <div className="navbar-right">
                 <Link to="/" className="nav-link">Home</Link>
                 <Link to="/aboutus" className="nav-link">About Us</Link>
-                <Link to="/contact" className="nav-link">Contact</Link>
+                <Link to="#contact-us" className="nav-link">Contact</Link>
                 <Link to="/policy" className="nav-link">Policy</Link>
-                <span className="theme-toggle" onClick={toggleTheme}>
-                    {darkMode ? '🌙 Dark' : '☀️ Light'}
-                </span>
+                <div className="theme-toggle">
+                    <input
+                        type="checkbox"
+                        id="theme-switch"
+                        checked={darkMode}
+                        onChange={toggleTheme}
+                    />
+                    <label htmlFor="theme-switch">
+                        <span className="slider"></span>
+                    </label>
+                </div>
             </div>
         </nav>
     );

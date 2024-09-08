@@ -1,8 +1,12 @@
 /* src/styles/styles.css */
+
+/* Root Variables for Themes */
 :root {
-    --primary-color: #6a0dad; /* Purple */
+    --primary-color: #79ff9f; /* Purple */
     --secondary-color: #007bff; /* Blue */
-    --background-color: #ffffff; /* Light Background */
+    --background-color: #d54d4d; /* Light Background */
+    --html-color: #ffffff; /* Light Background */
+
     --text-color: #333333; /* Light Text */
 }
 
@@ -10,61 +14,26 @@ body.dark-mode {
     --background-color: #1e1e1e; /* Dark Background */
     --text-color: #ffffff; /* Dark Text */
 }
+html {
+    scroll-behavior: smooth;
+}
 
 /* General Styles */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-color: var(--html-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-h1, h2, h3, h4 {
-    color: #333;
-}
-
-/* Home Page Styles */
-.home .video-background {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
-.container {
-    max-width: 100%;
-    overflow: hidden;
-}
-.video-background {
-    position: relative;
-    height: 70vh; /* Reduced height */
-    width: 80%; /* Make the video modular in width */
-    margin: 2rem auto; /* Center the video */
-    border-radius: 20px; /* Rounded corners */
-    overflow: hidden;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
-}
-
-.video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit; /* Ensure video corners match container */
-    display: block;
-}
-
-.video-background .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-}
-/* src/components/Navbar.css */
+/* Navbar Styles */
 .navbar {
     position: sticky;
     top: 0;
     width: auto;
     background-color: var(--background-color);
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,7 +42,7 @@ h1, h2, h3, h4 {
 }
 
 .navbar-logo {
-    height: 40px;
+    height: 70px;
     margin-right: 10px;
 }
 
@@ -106,22 +75,32 @@ h1, h2, h3, h4 {
     color: var(--primary-color);
 }
 
+/* Video Background Styles */
+.video-background {
+    position: relative;
+    height: 70vh; /* Adjusted to 70% of the viewport height */
+    width: 70vw;  /* Adjusted to 70% of the viewport width */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    border-radius: 20px; /* Rounded corners */
+    margin: auto;
+}
 
-.home .video-background video {
+.video-background video {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transform: translate(-50%, -50%);
-    /*background: url('/assets/images/background.jpg') no-repeat;*/
-    background-size: cover;
 }
 
-.home .video-background .overlay-text {
+/* Overlay Text Styling */
+.video-background .overlay-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -130,94 +109,203 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
-.carousel {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    max-width: 1200px;
-    margin: 2rem auto;
-}
-
-.carousel img {
-    width: 100%;
-    height: auto;
-}
-
-/* Event Cards */
+/* Event Cards Styles */
 .event-cards {
     display: flex;
     justify-content: space-around;
-    padding: 2rem;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 
-.event-cards .card {
-    background-color: #f7f7f7;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 30%;
-    text-align: center;
+.event-card {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Testimonials */
-.testimonials {
-    padding: 2rem;
-    background-color: #f7f7f7;
+    max-width: 300px;
     text-align: center;
 }
 
-.testimonials h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+.event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--secondary-color); /* Use contrast color for border */
 }
 
-.testimonials .testimonial {
-    margin-bottom: 1rem;
+.event-info {
+    padding: 15px;
 }
 
-.testimonials .testimonial p {
-    font-size: 1.2rem;
-    font-style: italic;
+.event-title {
+    font-size: 1.25rem;
+    color: var(--primary-color); /* Use primary color for titles */
+    margin: 10px 0;
 }
 
-.testimonials .testimonial h4 {
-    margin-top: 0.5rem;
-    font-weight: bold;
+.event-description {
+    font-size: 1rem;
+    color: var(--text-color); /* Use text color for descriptions */
 }
 
-/* Contact Us */
+/* Contact Us Styles */
+.contact-us-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
 .contact-us {
-    padding: 2rem;
-    background-color: #f7f7f7;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px; /* Set maximum width for the container */
+    width: 100%;
+    background-color: var(--background-color);
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-.contact-us h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+.contact-map {
+    flex: 1;
+    height: 400px; /* Adjust height as needed */
+    border-radius: 15px 0 0 15px; /* Rounded corners on left side */
+    overflow: hidden;
 }
 
-.contact-us p {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+.contact-details {
+    flex: 1;
+    padding: 20px;
+    border-radius: 0 15px 15px 0; /* Rounded corners on right side */
 }
 
-.map {
-    margin-top: 2rem;
+.contact-details h2 {
+    color: var(--primary-color); /* Primary color for headings */
+    margin-bottom: 15px;
 }
 
-/* About Us */
-.about-us, .policy, .contact {
-    padding: 2rem;
-    text-align: center;
+.contact-details p {
+    font-size: 1rem;
+    color: var(--text-color); /* Text color */
+    margin: 10px 0;
 }
 
-.about-us h1, .policy h1, .contact h1 {
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
+.contact-details strong {
+    color: var(--primary-color); /* Primary color for labels */
 }
 
-.about-us p, .policy p, .contact p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .video-background {
+        height: 50vh; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-background {
+        height: 40vh; /* Further adjust for very small screens */
+    }
+}.theme-toggle {
+     position: relative;
+     display: inline-block;
+     width: 60px;
+     height: 34px;
+ }
+
+.theme-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-toggle label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary-color);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.theme-toggle .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 4px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: .4s;
+    transform: translateY(-50%);
+}
+
+input:checked + label {
+    background-color: var(--secondary-color);
+}
+
+input:checked + label .slider {
+    transform: translateX(26px) translateY(-50%);
+}
+
+/* Additional styling for better visibility */
+.theme-toggle label {
+    background-color: #ccc;
+}
+
+.theme-toggle input:checked + label {
+    background-color: #2196F3;
+}
+
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 20%; /* Each image takes up 20% of the carousel width */
+    box-sizing: border-box;
+    padding: 10px; /* Optional padding around images */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.carousel-item img {
+    width: 100%; /* Make image fill its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
 }

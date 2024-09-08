@@ -7,8 +7,16 @@ import ContactUs from '../components/ContactUs';
 import NavBar from '../components/NavBar';
 
 import '../styles/styles.css';
+import {scaleVideo} from "../js/videoScaler";
 
 const Home: React.FC = () => {
+    React.useEffect(() => {
+        scaleVideo(); // Scale video on mount
+        window.addEventListener('resize', scaleVideo); // Add event listener for resizing
+        return () => {
+            window.removeEventListener('resize', scaleVideo); // Cleanup on unmount
+        };
+    }, []);
     return (
         <div className="home">
             <NavBar />
@@ -19,8 +27,7 @@ const Home: React.FC = () => {
         Your browser does not support the video tag.
     </video>
     <div className="overlay-text">
-        <h1>Your Dream Wedding, Our Expertise</h1>
-    <p>Making your special day unforgettable</p>
+
     </div>
     </div>
 
@@ -36,7 +43,7 @@ const Home: React.FC = () => {
         <Testimonials />
         </section>
 
-        <section className="contact-section container">
+        <section id="contact_us" className="contact-section container">
         <ContactUs />
         </section>
         </div>
