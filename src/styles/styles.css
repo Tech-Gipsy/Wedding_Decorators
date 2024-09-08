@@ -1,0 +1,223 @@
+/* src/styles/styles.css */
+:root {
+    --primary-color: #6a0dad; /* Purple */
+    --secondary-color: #007bff; /* Blue */
+    --background-color: #ffffff; /* Light Background */
+    --text-color: #333333; /* Light Text */
+}
+
+body.dark-mode {
+    --background-color: #1e1e1e; /* Dark Background */
+    --text-color: #ffffff; /* Dark Text */
+}
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+}
+
+/* Home Page Styles */
+.home .video-background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.container {
+    max-width: 100%;
+    overflow: hidden;
+}
+.video-background {
+    position: relative;
+    height: 70vh; /* Reduced height */
+    width: 80%; /* Make the video modular in width */
+    margin: 2rem auto; /* Center the video */
+    border-radius: 20px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit; /* Ensure video corners match container */
+    display: block;
+}
+
+.video-background .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+/* src/components/Navbar.css */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: auto;
+    background-color: var(--background-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar-logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+
+.home .video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    /*background: url('/assets/images/background.jpg') no-repeat;*/
+    background-size: cover;
+}
+
+.home .video-background .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+/* Event Cards */
+.event-cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.event-cards .card {
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 2rem;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.testimonials h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.testimonials .testimonial {
+    margin-bottom: 1rem;
+}
+
+.testimonials .testimonial p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.testimonials .testimonial h4 {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+/* Contact Us */
+.contact-us {
+    padding: 2rem;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.contact-us h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.contact-us p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.map {
+    margin-top: 2rem;
+}
+
+/* About Us */
+.about-us, .policy, .contact {
+    padding: 2rem;
+    text-align: center;
+}
+
+.about-us h1, .policy h1, .contact h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.about-us p, .policy p, .contact p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
