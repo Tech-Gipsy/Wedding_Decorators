@@ -4,8 +4,8 @@ export function scaleVideo() {
     const video = document.querySelector('.video-background video');
     if (video) {
         const videoContainer = document.querySelector('.video-background');
-        const windowWidth = window.innerWidth * 0.7; // 70% of window width
-        const windowHeight = window.innerHeight * 0.7; // 70% of window height
+        const windowWidth = window.innerWidth * 0.8; // 70% of window width
+        const windowHeight = window.innerHeight * 0.8; // 70% of window height
         const videoWidth = video.videoWidth;
         const videoHeight = video.videoHeight;
 

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/styles.css';
 
-const NavBar: React.FC = () => {
+const Navbar: React.FC = () => {
     const [darkMode, setDarkMode] = useState<boolean>(false);
 
     useEffect(() => {
@@ -22,6 +22,7 @@ const NavBar: React.FC = () => {
         <nav className="navbar">
             <div className="navbar-left">
                 <img src="/assets/logo.png" alt="Company Logo" className="navbar-logo" />
+                <span className="company-name">Wedding Planner Co.</span>
             </div>
             <div className="navbar-right">
                 <Link to="/" className="nav-link">Home</Link>
@@ -42,6 +43,6 @@ const NavBar: React.FC = () => {
             </div>
         </nav>
     );
-}
+};
 
-export default NavBar;
+export default Navbar;

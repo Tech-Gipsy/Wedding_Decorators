@@ -25,7 +25,7 @@ const Carousel: React.FC = () => {
     };
 
     return (
-        <div className="carousel">
+        <div className="carousel container">
             <button className="carousel-control prev" onClick={prevSlide}>
                 &#10094;
             </button>
