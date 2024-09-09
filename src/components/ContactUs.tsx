@@ -9,7 +9,7 @@ const ContactUs: React.FC = () => {
                 <div className="contact-map">
                     {/* Embed a map. You can use Google Maps or any other map provider */}
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.616690743334!2d-122.42511548468153!3d37.77397277975905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808bcd0e5b57%3A0x6f2e9d0f80e3a8e0!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1618327896540!5m2!1sen!2sus"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22558.81131759983!2d78.4612904!3d17.4570317!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91359d6038ff%3A0x5303d92126b90036!2sPriya%20Wedding%20Decorators!5e1!3m2!1sen!2sin!4v1725864057183!5m2!1sen!2sin"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
@@ -19,8 +19,10 @@ const ContactUs: React.FC = () => {
                 </div>
                 <div className="contact-details">
                     <h2>Contact Us</h2>
-                    <p><strong>Address:</strong> 123 Wedding St, San Francisco, CA 94103</p>
-                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                    <p><strong>Address:</strong>
+                        34/2RT, opposite old airport, Prakash Nagar, Begumpet, Hyderabad, Telangana 500016
+                    </p>
+                    <p><strong>Phone:</strong> +91 9391097964</p>
                     <p><strong>Email:</strong> info@weddingplanner.com</p>
                     <p><strong>Hours:</strong> Mon - Fri: 9 AM - 6 PM</p>
                 </div>
