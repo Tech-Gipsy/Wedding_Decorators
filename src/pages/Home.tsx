@@ -1,5 +1,5 @@
 // src/pages/Home.tsx
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import Carousel from '../components/Carousel';
 import EventCards from '../components/EventCards';
 import Testimonials from '../components/Testimonials';
@@ -8,28 +8,46 @@ import NavBar from '../components/NavBar';
 
 import '../styles/styles.css';
 import {scaleVideo} from "../js/videoScaler";
+import Footer from "../components/footer";
 
 const Home: React.FC = () => {
-    React.useEffect(() => {
-        scaleVideo(); // Scale video on mount
-        window.addEventListener('resize', scaleVideo); // Add event listener for resizing
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    const scaleVideo = () => {
+        if (videoRef.current) {
+            const container = videoRef.current.parentElement;
+            if (container) {
+                const containerWidth = container.clientWidth;
+                const containerHeight = container.clientHeight;
+
+                // Adjust the video dimensions to match the container size
+                videoRef.current.style.width = `${containerWidth}px`;
+                videoRef.current.style.height = `${containerHeight}px`;
+            }
+        }
+    };
+
+    useEffect(() => {
+        scaleVideo(); // Scale the video on component mount
+        window.addEventListener('resize', scaleVideo); // Scale the video on window resize
+
         return () => {
-            window.removeEventListener('resize', scaleVideo); // Cleanup on unmount
+            window.removeEventListener('resize', scaleVideo); // Cleanup event listener
         };
     }, []);
+
     return (
         <div className="home">
             <NavBar />
-
             <div className="video-background">
-            <video autoPlay loop muted>
-    <source src="/assets/videos/promo.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-    </video>
-    <div className="overlay-text">
+                <video ref={videoRef} autoPlay loop muted playsInline>
+                    <source src="/assets/videos/promo.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
+                <div className="overlay-text">
 
-    </div>
-    </div>
+                </div>
+            </div>
 
     <section className="carousel-section container">
         <Carousel />
@@ -46,7 +64,9 @@ const Home: React.FC = () => {
         <section id="contact_us" className="contact-section container">
         <ContactUs />
         </section>
+            <Footer />
         </div>
+
 );
 }
 

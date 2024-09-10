@@ -17,6 +17,15 @@ const testimonials = [
         id: 3,
         text: "A wonderful experience from start to finish. Thank you!",
         author: "Emily Johnson"
+    }, {
+        id: 4,
+        text: "Professional and attentive to every detail. It was perfect!",
+        author: "John Smith"
+    },
+    {
+        id: 5,
+        text: "A wonderful experience from start to finish. Thank you!",
+        author: "Emily Johnson"
     }
     // Add more testimonials as needed
 ];
